@@ -1,0 +1,77 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+//4.1
+float x,y;
+scanf("%g\n%g\n",&x,&y);
+if (20-(5*x+7*y)>=0)
+    printf("DA,suma de 20 de lei ajunge");
+else
+    printf("NU,suma de 20 de lei nu ajunge");
+printf("\n");
+//4.2
+int a,b,c;//le declar cu numele a b c pentru a nu se incurca cu cele de la 4.1
+scanf("%d\n%d\n%d",&a,&b,&c);
+if (a<=c&&c<b)
+    printf("c este in intervalul [a,b)");
+else
+    printf("c nu este in intervalul [a,b)");
+printf("\n");
+//4.3
+float x1,y1;
+int cod;
+//le declar cu numele x1 y1 pentru a nu se incurca cu cele de la 4.1
+scanf("%g\n%g\n%d",&x1,&y1,&cod);
+switch(cod)
+{
+case 1:
+    if (x1>y1)
+        printf("%g",x1);
+    else
+        printf("%g",y1);
+    break;
+case 2:
+    if (y1>x1)
+        printf("%g",x1);
+    else
+        printf("%g",y1);
+    break;
+case 3:
+    printf("%g",x1);
+case 4:
+    printf("%g",y1);
+default: if (cod<1||cod>5)
+              printf("cod incorect");
+}
+printf("\n");
+//4.4
+float kmio,kmao,consumo,consumafara,litrucarburant,prettotal;
+scanf("%g%g",&kmio,&kmao);
+consumo=(6.5*kmio)/100;
+consumafara=(5*kmao)/100;
+litrucarburant=6.2;
+prettotal=(consumafara+consumo)*litrucarburant;
+printf("%g lei",prettotal);
+//4.7
+unsigned n;
+scanf("%d",&n);
+int contorcifimp=0,cif;
+while(n)
+{cif=n%10;
+    if (cif%2==1)
+    contorcifimp++;
+n/=10;
+}
+printf("%d",contorcifimp);
+//4.12
+int n;
+scanf("%d",&n);
+if (n%4==0 &&n%400==0||n%100!=0)
+    printf("an bisect");
+else
+    printf("nu e an bisect");
+
+    return 0;
+}
