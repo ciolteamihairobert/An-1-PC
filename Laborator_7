@@ -1,0 +1,106 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{//7.1
+    double x,y;
+    scanf("%lf",&x);
+    scanf("%lf",&y);
+    double *px,*py;
+    px=&x;
+    py=&y;
+    if(px>py){
+        printf("%lf",x);
+    }
+    else{
+        printf("%lf",y);
+    }
+//7.2
+    int a,b;
+    int *p;
+    scanf("%d",&a);
+    scanf("%d",&b);
+    if(a>b)
+    {
+        p=&a;
+        printf("%d",*p);
+    }
+    else
+    {
+        p=&b;
+        printf("%d",*p);
+    }
+//7.3
+int m,n,*pm,*pn,aux;
+ scanf("%d",&m);
+ scanf("%d",&n);
+ printf("\n");
+ pm=&m;
+ pn=&n;
+ aux=*pm;
+ *pm=*pn;
+ *pn=aux;
+ printf("%d\n",m);
+ printf("%d\n",n);
+
+ //7.4
+int v[]={7,-5,4,3,-9,2,-8};
+int i,c=0;
+int*p1;
+for(i=0;i<7;i++)
+     {p1=v+i;
+         if(*p1<0)
+          {c++;}}
+printf("%d",c);
+//7.5
+int w[]={7,-5,4,3,-9,2,-8};
+int *p2,*min;
+min=w;
+for(i=0;i<7;i++)
+{
+    p2=w+i;
+    if(*p2<*min)
+        {min=p2;}
+}
+printf("%d",*min);
+//7.6
+int n2,q[10];
+scanf("%d",&n2);
+int *p3;
+p3=q;
+for(i=0;i<n2;i++)
+    {scanf("%d",p3+i);}
+int j;
+for(i=0;i<n2-1;i++)
+    for(j=i+1;j<n2;j++)
+{
+    if(*(p3+i)<*(p3+j))
+    {
+        int aux1;
+        aux1=*(p3+i);
+        *(p3+i)=*(p3+j);
+        *(p3+j)=aux1;
+    }
+}
+for(i=0;i<n2;i++)
+    printf("%d ",*(q+i));
+//7.7
+int r[]={5,8,1,4,2,6,9};
+int n1=7;
+int *p4;
+p4=r;
+for(i=0;i<n1;i++)
+{
+    if(*(p4+i)%2==0)
+    {
+        for(j=i;j<n1;j++)
+             *(r+j)=*(r+j+1);
+          n1--;
+          i--;
+    }
+}
+for(i=0;i<n1;i++)
+    printf("%d ",*(p4+i));
+
+    return 0;
+}
