@@ -1,0 +1,116 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <cmath>
+int main()
+{//6.1
+   int v[]={7,-5,4,-3,-9,2,-8};
+   int n = 7;
+   int numar_el_negative = 0;
+   int i;
+   for(i=0;i<n;i++)
+    if (v[i]<0)
+      numar_el_negative++;
+   printf("%d",numar_el_negative);
+//6.2
+int v1[]={7,-5,4,3,-9,2,-8};
+int el_minim=v1[0];
+for(i=0;i<7;i++)
+    if (v1[i]<el_minim)
+      el_minim=v1[i];
+printf("elementul minim e:%d",el_minim);
+//6.3
+int n1,a[10];
+scanf("%d",&n1);
+for(i=0;i<n1;i++)
+    scanf("%d",&a[i]);
+for(i=0;i<n1;i++)
+    if(a[i]>0&&a[i]%2==1)
+       break;
+if(i==n1)
+    printf("toate elementele pozitive sunt pare");
+else
+    printf("nu toate elementele pozitive sunt pare");
+
+//6.4
+int k,b[]= {7,-5,4,3,-9,2,-8};
+scanf("%d",&k);
+for ( i = 0;i<7 ;i++)
+    if (b[i]>k)
+       break;
+if (i==7)
+    printf("nu exista o valoare mai mare decat k");
+else
+    printf("exista cel putin un numar mai mare decat k");
+//6.5
+int x,y,minim=b[0];
+scanf("%d\n%d",&x,&y);
+for(i=0;i<7;i++)
+    if(b[i]<minim&&x<=b[i]&&b[i]<=y)
+           minim=b[i];
+printf("%d",minim);
+//6.6
+int n2;
+float c[5];
+scanf("%d",&n2);
+for (i=0;i<n2;i++)
+    scanf("%g",&c[i]);
+for(i=0;i<n2;i++)
+    if(abs(c[i])>10)
+     printf("%g",c[i]);
+//6.7
+int n3,a1[10];
+
+scanf("%d",&n3);
+for(i=0;i<n3;i++)
+    scanf("%d",&a1[i]);
+int aux,s;
+do{
+    s=0;
+    for(i=0;i<n3-1;i++){
+        if(a1[i]%2==0&&a1[i+1]%2==1)
+    {
+        aux = a1[i];
+        a1[i]=a1[i+1];
+        a1[i+1]=aux;
+        s=1;
+    }
+    }
+}while(s);
+for(i=0;i<n3;i++){
+    printf("%d ",a1[i]);}
+
+//6.9
+int n4,w[10];
+int j;
+scanf("%d",&n4);
+for(i=0;i<n4;i++)
+    scanf("%d",&w[i]);
+for(i=0;i<n4;i++)
+{if(w[i]%2==1)
+ for(j=n4;j>=i;j--)
+     w[j]=w[j-1];
+ w[i]=0;
+ n4++;
+ i+=2;
+}
+for(i=0;i<n4;i++)
+    printf("%d ",w[i]);
+//6.11
+int n5,q[10];
+scanf("%d",&n5);
+for(i=0;i<n5;i++)
+    scanf("%d",&q[i]);
+for(i=0;i<n5;i++){
+    for(int m=i+1;m<n5;m++)
+    if(q[i]==q[m])
+       for(j=i+1;j<n5;j++){
+        q[j]=q[j+1];
+        n5--;
+        i--;
+       }
+}
+for (i=0;i<n5;i++){
+        printf("%d ",q[i]);
+    }
+    return 0;
+}
