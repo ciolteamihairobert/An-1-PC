@@ -1,0 +1,78 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{//8.1
+  int n,a[10][10];
+  int i,j;
+  scanf("%d",&n);
+  for(i=0;i<n;i++)
+    for(j=0;j<n;j++)
+      {scanf("%d",&a[i][j]);}
+  int ok=1;
+  for(i=0;i<n;i++)
+    for(j=0;j<n;j++)
+    {
+        if(i==j&&a[i][j]!=1)
+           {ok=0;}
+        if(i!=j&&a[i][j]!=0)
+        {
+            ok=0;
+        }
+    }
+  if(ok==1)
+    printf("Matrice unitate");
+  else
+    printf("Nu e matrice unitate");
+//8.2
+int m1,n1,a1[10][10];
+
+scanf("%d%d",&m1,&n1);
+  for(i=0;i<m1;i++)
+    for(j=0;j<n1;j++)
+        {if(i>j)
+         a1[i][j]=i;
+        else
+         a1[i][j]=j;}
+for(i=0;i<m1;i++){
+  for(j=0;j<n1;j++)
+   {printf("%d ",a1[i][j]);}
+   printf("\n");}
+//8.3
+int n2,m2,a2[10][20];
+scanf("%d%d",&n2,&m2);
+int k=1;
+for(i=0;i<n2;i++)
+    for(j=0;j<m2;j++)
+{
+    *(*(a2+i)+j)=k;
+    k++;
+}
+for(i=0;i<n2;i++){
+  for(j=0;j<m2;j++)
+   {printf("%d ",(*(*(a2+i)+j)));}
+   printf("\n");}
+//8.4
+int n3,a3[50][50];
+
+scanf("%d",&n3);
+for(i=0;i<n3;i++)
+    for(j=0;j<n3;j++)
+      {scanf("%d",&a3[i][j]);}
+for(i=0;i<n3;i++)
+    for(j=0;j<n3;j++)
+    {
+        if(i>j)
+        {
+            int aux;
+            aux=a3[i][j];
+            a3[i][j]=a3[j][i];
+            a3[j][i]=aux;
+        }
+    }
+for(i=0;i<n3;i++){
+  for(j=0;j<n3;j++)
+   {printf("%d ",a3[i][j]);}
+   printf("\n");}
+    return 0;
+}
