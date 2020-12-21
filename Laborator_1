@@ -1,0 +1,59 @@
+//aplicatia 1.1
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    printf("Ana\nIon\nMaria");
+    return 0;
+}
+//aplicatia 1.2
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+
+    printf("%%%g%%",3.14);
+    return 0;
+}
+//aplicatia 1.4
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    printf("Caracterul \\ se poate afisa folosind \"\\\\\"");
+    return 0;
+}
+//aplicatia 1.5
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{  float a ;
+   a=3.14;
+    printf("\"%g\"",a);
+    return 0;
+}
+//aplicatia 1.6
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{  float a,b;
+    scanf("%g",&a);
+    scanf("%g",&b);
+    printf("%g\n%g",b,a);
+    return 0;
+}
+//aplicatia 1.7
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{  printf("---------\n");
+   printf("| SALUT |\n");
+   printf("---------\n");
+    return 0;
+}
